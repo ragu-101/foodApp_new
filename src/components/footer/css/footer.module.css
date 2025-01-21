@@ -1,0 +1,48 @@
+.footersec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 8vw;
+    padding-top: 80px;
+    color: #d9d9d9;
+    background-color:#323232;
+    margin-top: 80px;
+}
+.footersec hr{
+    width: 100%;
+    height: 2px;
+    margin: 20px 0 12px;
+    background-color: grey;
+    border: none;
+}
+.ftcontent{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr repeat(2,1fr);
+    gap:80px;
+}
+.ftleft,.ftcenter,.ftright{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.ftleft li,.ftcenter li,.ftright li{
+    list-style: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.ftcontent li:hover{
+    color: tomato;
+}
+.ftcenter h2,.ftright h2{
+    color: #ffffff;
+}
+.ftsocialicons img{
+    width: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.ftleft .ftlogo{
+    width: 160px;
+}

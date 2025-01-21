@@ -1,0 +1,60 @@
+
+.foodDisplay{
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 14px;
+    box-shadow: 0 0 10px #000015;
+    transition: 0.3s;
+}
+
+.fiimgcontainer{
+    width: 100%;
+    position: relative;
+}
+.fiimgcontainer img{
+    width: 100%;
+    border-radius: 14px 14px 0 0;
+}
+.fiinfo{
+    padding: 20px;
+}
+.firating{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.firating p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.firating img{
+    width: 70px;
+}
+.fidesc{
+    color:#676767;
+    font-size: 12px;
+}
+.fiprice{
+    color: tomato;
+    margin: 12px 0;
+    font-size: 22px;
+}
+
+.itemcounter{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    padding: 2px;
+    background-color: #ffffff;
+    border-radius: 50px;
+}
+
+.itemcounter img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}

@@ -1,0 +1,40 @@
+
+.header{
+    height: 34vw;
+    margin:30px auto;
+    background: url('/header_img.png') no-repeat;
+    background-size: contain;
+    position:relative;
+}
+
+.headerContents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+}
+
+.headerContents h2{
+    font-size: max(4.5vw,22px);
+    color:#ffffff;
+    font-weight: 500;
+}
+
+.headerContents p{
+    font-size: 1vw;
+    color: #ffffff;
+}
+
+.headerContents button{
+    border:none;
+    color:#747474;
+    padding: 1vw 2.3vw;
+    background-color: #ffffff;
+    font-size: max(1vw,13px);
+    border-radius: 50px;
+    font-weight: 500;
+}
