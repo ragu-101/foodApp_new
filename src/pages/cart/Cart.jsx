@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import styles from './css/cart.module.css';
 import { StoreContext } from '../../context/StoreContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'
+import { assets } from '../../images/others/assets';
 
 const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
@@ -10,6 +11,7 @@ const Cart = () => {
 
   return (
     <div className={styles.cart}>
+      <Link to='/' className={styles.clickview}> <img src={assets.back_icon} alt="back_icon" /> Back</Link>
       <div className={styles.cartitems}>
         <div className={styles.carttitles}>
           <p>Items</p>

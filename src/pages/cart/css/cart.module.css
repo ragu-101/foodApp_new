@@ -1,5 +1,17 @@
 .cart {
-  margin-top: 100px;
+  padding-top: 100px;
+  position: relative;
+}
+.clickview img{
+  width: 15px;
+}
+.clickview{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  top:20px;
+  left:16px;
 }
 .carttitles {
   display: grid;
@@ -100,7 +112,10 @@
 
 @media (max-width:991px){
   .cart{
-    padding: 0 16px;
+    padding: 40px 16px 0;
+  }
+  .clickview{
+    top: 0;
   }
 }
 

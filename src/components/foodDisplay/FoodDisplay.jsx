@@ -15,6 +15,7 @@ const FoodDisplay = ({category}) => {
             }
           })}
         </div>
+        <hr />
     </div>
   )
 }
