@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 20px 8vw;
+    padding: 24px 8vw;
     padding-top: 80px;
     color: #d9d9d9;
     background-color:#323232;
@@ -45,4 +45,26 @@
 }
 .ftleft .ftlogo{
     width: 160px;
+}
+
+@media (max-width:991px){
+    .footersec{
+        padding: 24px 16px;
+    }
+    .ftcontent{
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .footersec hr{
+        margin: 0;
+    }
+    .footersec p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:767px){
+    .footersec p{
+        font-size: 12px;
+    }
 }

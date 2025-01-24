@@ -30,3 +30,10 @@ a{
     opacity: 1;
   }
 }
+
+@media (max-width:991px){
+  .app{
+    width: 100%;
+    padding: 0;
+  }
+}

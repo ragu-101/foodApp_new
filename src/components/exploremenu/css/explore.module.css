@@ -52,3 +52,18 @@ hr{
 .listitems .activeimg{
     border-color: tomato;
 }
+
+@media (max-width:991px){
+    .exporemenutxt{
+        max-width: 100%;
+    }
+    .exploremenulist{
+        margin: 12px 0;
+    }
+}
+
+@media (max-width:767px){
+    .exploremenulist{
+        margin: 0;
+    }
+}

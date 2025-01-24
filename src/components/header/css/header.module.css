@@ -38,3 +38,42 @@
     border-radius: 50px;
     font-weight: 500;
 }
+
+@media (max-width:991px){
+    .header{
+        width: 100%;
+        height: 336px;
+        background-size: cover;
+        background-position: top;
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 0 16px;
+    }
+    .headerContents{
+        max-width: 80%;
+    }
+    .headerContents h2{
+        font-size: 44px;
+    }
+    .headerContents p{
+        font-size: 14px;
+    }
+    .headerContents button{
+        font-size: 14px;
+        padding: 10px 20px;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width:767px){
+    .headerContents h2{
+        font-size: 34px;
+    }
+    .headerContents p{
+        font-size: 12px;
+    }
+    .headerContents button{
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
