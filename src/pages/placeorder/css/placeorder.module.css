@@ -4,18 +4,30 @@
     align-items: flex-start;
     gap: 50px;
     justify-content: space-between;
-    margin-top: 100px;
+    padding-top: 100px;
+    position: relative;
 }
 
+.clickview{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  top:20px;
+  left:16px;
+}
+.clickview img{
+  width: 15px;
+}
 
 .placeleft{
     width: 100%;
     max-width: max(30%, 500px);
 }
-.placeleft .title{
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 50px;
+.title{
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 50px;
 }
 
 .placeleft input{
@@ -64,4 +76,33 @@
     cursor: pointer;
     color: #fff;
     margin-top: 32px;
+  }
+
+  @media (max-width:991px){
+    .placeorder{
+      padding: 0 16px;
+      gap: 32px;
+    }
+    .clickview{
+      top: 0;
+    }
+  }
+
+  @media (max-width:767px){
+    .placeorder{
+      gap: 48px;
+      padding-top: 48px;
+    }
+    .title{
+      margin-bottom: 24px;
+    }
+    .placeorder{
+      flex-direction: column;
+    }
+    .placeleft,.placeright{
+      max-width: 100%;
+    }
+    .cartbtmitems .title{
+      margin-bottom: 0;
+    }
   }

@@ -16,6 +16,7 @@
 .carttitles {
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+  gap: 6px;
   align-items: center;
   color: grey;
   font-size: max(1vw, 12px);
@@ -98,7 +99,8 @@
     background: transparent;
     border: none;
     outline: none;
-    padding: 0 0 0 10px;
+    padding: 0 12px;
+    flex: 1;
 }
 
 .cartpromoinp button{
@@ -106,8 +108,18 @@
     padding: 12px 6px;
     background-color: #000;
     color: #fff;
-    border-radius: 6px;
+    border-radius: 0 6px 6px 0;
     border: none;
+}
+
+
+.emptycart{
+  display: grid;
+  min-height: 140px;
+  place-content: center;
+}
+.emptycart p{
+  margin: 0;
 }
 
 @media (max-width:991px){

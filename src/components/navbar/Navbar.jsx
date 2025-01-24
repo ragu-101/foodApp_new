@@ -8,7 +8,13 @@ const Navbar = ({setShowLogin}) => {
     const [activemenu,setActivemenu] = useState('home');
     const [imgsearch,setImagesearch] = useState(false);
 
-    const {getTotalCartAmount} = useContext(StoreContext);
+    const {getTotalCartAmount,cartItems} = useContext(StoreContext);
+
+    const getBadge = () =>{
+        // Object.keys(cartItems
+        // if()
+        return 0
+    }
   return (
     <>
         <div className='navbar'>
@@ -26,7 +32,7 @@ const Navbar = ({setShowLogin}) => {
                 </div>
                 <div className='navbar-search-icon'>
                     <Link to='/cart'><img src={assets.basket_icon} alt="basketicon" /></Link>
-                    {getTotalCartAmount() > 0 && <div className='dot'></div>}
+                    {Object.keys(cartItems).length > 0 && <div className='dot'>{Object.keys(cartItems).length}</div>}
                 </div>
                 <button onClick={()=>{setShowLogin(false)}}>Sign In</button>
             </div>

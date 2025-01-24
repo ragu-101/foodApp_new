@@ -1,12 +1,15 @@
 import React,{useContext} from 'react';
 import styles from './css/placeorder.module.css';
 import { StoreContext } from '../../context/StoreContext';
+import { assets } from '../../images/others/assets';
+import { Link } from 'react-router-dom';
 
 const PlaceOrder = () => {
 
    const {getTotalCartAmount} = useContext(StoreContext);
   return (
     <form className={styles.placeorder}>
+      <Link to='/' className={styles.clickview}> <img src={assets.back_icon} alt="back_icon" /> Back</Link>
       <div className={styles.placeleft}>
         <p className={styles.title}>Delivery Information</p>
         <div className={styles.mulitifields}>
@@ -27,7 +30,7 @@ const PlaceOrder = () => {
       </div>
       <div className={styles.placeright}>
         <div className={styles.cartbtmitems}>
-          <h2>Cart total</h2>
+          <p className={styles.title}>Cart total</p>
           <div>
             <div className={styles.cartdetails}>
               <p>Subtotal</p>

@@ -57,11 +57,15 @@
 
 .navbar-search-icon .dot{
     position: absolute;
-    min-width: 10px;
-    min-height: 10px;
+    min-width: 20px;
+    min-height: 20px;
     background: tomato;
     border-radius: 50%;
     inset: -8px -8px auto auto;
+    display: grid;
+    place-content: center;
+    color: #fff;
+    font-size: 12px;
 }
 
 .search-items{

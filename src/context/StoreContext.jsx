@@ -17,12 +17,22 @@ const StoreContextProvider = ({children}) =>{
    }
 
    const removeFromCart = (itemId) =>{
-      setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+      console.log('remove cart:',cartItems)
+      if(cartItems[itemId] > 1)
+         {
+            console.log(cartItems[itemId],'true')
+            setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+         }
+      else{
+         console.log(itemId,'false')
+         delete cartItems[itemId];
+         setCartItems((prev)=>({...prev}))
+      }
    }
 
    const getTotalCartAmount = () =>{
       let totalAmount = 0;
-      console.log('cart data: ',cartItems);
+      // console.log('cart data: ',cartItems);
       for(const item in cartItems){
          if(cartItems[item] > 0){
             let itemInfo = food_list.find((product)=>product._id === item);
@@ -31,6 +41,8 @@ const StoreContextProvider = ({children}) =>{
       }
       return totalAmount;
    }
+
+   
 
     const contextValue = {
       food_list,
