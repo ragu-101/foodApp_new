@@ -51,6 +51,7 @@
     padding: 2px;
     background-color: #ffffff;
     border-radius: 50px;
+    transition: all 0.5s ease;
 }
 
 .itemcounter img{

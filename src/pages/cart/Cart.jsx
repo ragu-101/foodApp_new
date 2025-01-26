@@ -3,6 +3,7 @@ import styles from './css/cart.module.css';
 import { StoreContext } from '../../context/StoreContext';
 import { useNavigate, Link } from 'react-router-dom'
 import { assets } from '../../images/others/assets';
+import { HiX } from "react-icons/hi";
 
 const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
@@ -36,7 +37,7 @@ const Cart = () => {
                       <p>${item.price}</p>
                       <p className={styles.priceview}><span>-</span>{cartItems[item._id]}<span>+</span></p>
                       <p>${item.price * cartItems[item._id]}</p>
-                      <p className={styles.cross} onClick={() => removeFromCart(item._id)}>x</p>
+                      <p className={styles.cross} onClick={() => removeFromCart(item._id)}><HiX /></p>
                     </div>
                     <hr />
                   </React.Fragment>
