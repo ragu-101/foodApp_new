@@ -6,10 +6,10 @@ import { HiOutlineSearch } from "react-icons/hi";
 
 const Search = () => {
   const [searchval, setSearchval] = useState("");
-  const [filterval, setFilterval] = useState([]);
   const [mobfocus, setmobfocus] = useState(false);
   const { food_list } = useContext(StoreContext);
   const inpref = useRef(null);
+  const [activeli,setActiveli] = useState(-1);
 
   const handleChange = (e) => {
     setSearchval(e.target.value);
@@ -20,10 +20,13 @@ const Search = () => {
   };
 
   const filterSuggestions = () => {
+    let filterarr = []
     if (!searchval) return [];
-    return food_list.filter((suggestion) =>
+    filterarr = food_list.filter((suggestion) =>
       suggestion.name.trim().toLowerCase().includes(searchval.toLowerCase())
     );
+
+    return filterarr.slice(0,5);
   };
 
   useEffect(() => {
@@ -55,11 +58,28 @@ const Search = () => {
 
   const filteredSuggestions = filterSuggestions();
 
+  const handleSuggestionsList = (e) =>{
+    if(e.key === 'ArrowDown'){
+      setActiveli(prev => prev < filteredSuggestions.length-1 ? prev+1 : 0);
+    }
+    else if(e.key === 'ArrowUp'){
+      setActiveli(prev => prev < filteredSuggestions.length && prev > 0 ? prev-1 : filteredSuggestions.length);
+    }
+    else if(e.key === 'Enter'){
+      hadleInputvalue(filteredSuggestions[activeli].name);
+    }
+  }
+
+  const hadleInputvalue = (inp) =>{
+    console.log("inp: ",inp)
+    setSearchval(inp);
+  }
+
   return (
     <div
-      className={`${styles.searchcontainer} ${
+      className={`sectionview ${styles.searchcontainer} ${
         mobfocus ? styles.searchcontainemob : ""
-      }`}
+      }`} id="search"
     >
       <span className={styles.closeicon} onClick={() => setmobfocus(false)}>
         <HiX color="#fff" />
@@ -68,10 +88,12 @@ const Search = () => {
         <div className={styles.searchdiv}>
           <HiOutlineSearch className={styles.searchicon} />
           <input
+            autoFocus
             type="text"
             placeholder="Search"
             onClick={focusInput}
             onChange={handleChange}
+            onKeyDown={handleSuggestionsList}
             value={searchval}
             ref={inpref}
           />
@@ -83,8 +105,8 @@ const Search = () => {
                 ))} */}
 
                 {filteredSuggestions.length > 0 ? (
-                  filteredSuggestions.map((item) => (
-                    <li key={item._id}>{item.name}</li>
+                  filteredSuggestions.map((item,index) => (
+                    <li key={item._id} className={activeli === index ? styles.activeli : ''} onClick={(e)=>hadleInputvalue(item.name)}>{item.name}</li>
                   ))
                 ) : (
                   <li style={{ textAlign: "center" }}>No items found</li>

@@ -13,7 +13,7 @@ const Login = ({setShowLogin}) => {
           <img onClick={()=>setShowLogin(true)} src={assets.cross_icon} alt="" />
         </div>
         <div className={styles.logininpsec}>
-          {currState === 'Login' && <input type="text" placeholder='Your name' required />}
+          {currState === 'Sign up' && <input type="text" placeholder='Your name' required />}
           <input type="email" placeholder='Your email' required />
           <input type="password" placeholder='Password' required />
         </div>

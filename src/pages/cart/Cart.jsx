@@ -6,7 +6,7 @@ import { assets } from '../../images/others/assets';
 import { HiX } from "react-icons/hi";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount,addToCart } = useContext(StoreContext);
   // console.log('fdlist:', food_list);
   const naviagte = useNavigate();
 
@@ -35,7 +35,7 @@ const Cart = () => {
                       <img src={item.image} alt="" />
                       <p>{item.name}</p>
                       <p>${item.price}</p>
-                      <p className={styles.priceview}><span>-</span>{cartItems[item._id]}<span>+</span></p>
+                      <p className={styles.priceview}><span onClick={()=>removeFromCart(item._id)}>-</span>{cartItems[item._id]}<span onClick={()=>addToCart(item._id)}>+</span></p>
                       <p>${item.price * cartItems[item._id]}</p>
                       <p className={styles.cross} onClick={() => removeFromCart(item._id)}><HiX /></p>
                     </div>
@@ -67,7 +67,7 @@ const Cart = () => {
             </div>
             <button onClick={()=>naviagte('/placeorder')}>PROCCED TO CHECKOUT</button>
           </div>
-          <div className={styles.cartpromocode}>
+          {/* <div className={styles.cartpromocode}>
             <div>
                 <p>If you have a promocode, Enter it here</p>
                 <div className={styles.cartpromoinp}>
@@ -75,7 +75,7 @@ const Cart = () => {
                   <button>Submit</button>
                 </div>
             </div>
-          </div>
+          </div> */}
         </div>
         </>
         :

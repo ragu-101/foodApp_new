@@ -18,6 +18,34 @@ a{
   margin: 0 auto;
 }
 
+.filenotfound{
+  min-height: 400px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 6px;
+}
+.filenotfound h2{
+  margin: 0;
+  font-size: 40px;
+}
+.filenotfound p{
+  margin: 0;
+  font-size: 26px;
+}
+.filenotfound a{
+  display: flex;
+  align-items: center;
+  gap:6px;
+  margin-top: 6px;
+}
+.filenotfound a:hover{
+  text-decoration: underline;
+}
+.filenotfound a img{
+  width: 16px;
+}
+
 .fadein{
   animation: fadeIn 3s;
 }
