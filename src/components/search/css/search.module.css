@@ -81,7 +81,10 @@
     left: 0;
     border-radius: 0 4px 4px 0;
 }
-.suggestionview li:hover::before{
+.suggestionview li:hover,.activeli{
+    background-color: #eeeeee;
+}
+.suggestionview li:hover::before,.activeli::before{
     background-color: tomato;
 }
 

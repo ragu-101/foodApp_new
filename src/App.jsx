@@ -6,6 +6,7 @@ import Cart from './pages/cart/Cart';
 import PlaceOrder from './pages/placeorder/PlaceOrder';
 import Footer from './components/footer/Footer';
 import Login from './components/login/Login';
+import FileNotFound from './pages/filenotfound/FileNotFound';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(true);
@@ -19,6 +20,8 @@ const App = () => {
               <Route path='/' element={<Home />} />
               <Route path='/cart' element={<Cart />} />
               <Route path='/placeorder' element={<PlaceOrder />} />
+
+              <Route path='*' element={<FileNotFound />} />
             </Routes>
           </BrowserRouter >
           <Footer />

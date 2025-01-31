@@ -13,7 +13,7 @@ const ExploreMenu = ({category,setCategory}) => {
       console.log("category : ",category)
   }
   return (
-    <div className={styles.exploremenu} id='explore-menu'>
+    <div className={`sectionview ${styles.exploremenu}`} id='explore-menu'>
       <h1>Explore our menu</h1>
       <p className={styles.exporemenutxt}>Choose form a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
       <div className={styles.exploremenulist}>
